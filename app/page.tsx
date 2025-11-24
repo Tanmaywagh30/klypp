@@ -93,7 +93,7 @@ export default function Home() {
               </div>
               {emailError && <p className="error-message">{emailError}</p>}
               {submitted && !emailError && (
-                <p className="success-message">Thanks! We'll notify you soon.</p>
+                <p className="success-message">Thanks! We&apos;ll notify you soon.</p>
               )}
             </form>
           </div>
@@ -171,7 +171,7 @@ export default function Home() {
               <div className="card-content">
                 <h3 className="card-title">Live Mall Inventory</h3>
                 <p className="card-description">
-                  Tap brands you trust. Klypp connects to real-time stock across premium mall stores so what you see is what's available — no guesswork, no sold-out surprises.
+                  Tap brands you trust. Klypp connects to real-time stock across premium mall stores so what you see is what&apos;s available — no guesswork, no sold-out surprises.
                 </p>
               </div>
               <div className="card-image">
