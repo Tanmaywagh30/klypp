@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Spacing */
+  --spacing-lg: 1rem;
+  --spacing-md: 0.75rem;
+  --spacing-sm: 0.5rem;
+  --spacing-xl: 1.5rem;
+  --spacing-xs: 0.25rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+  --spacing-4xl: 4rem;
+  --section-gap: clamp(2rem, 6vw, 6rem);
+  
+  /* Colors */
+  --color-primary: #2e2bd8;
+  --color-accent: #ffd400;
+  --color-secondary: #ff6a26;
+  --color-surface: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-on-surface: #071031;
+  --color-on-surface-secondary: #3f4a5a;
+  --color-neutral: #6b7280;
+  --color-scrim: rgba(4, 8, 20, 0.48);
+  --color-overlay: color-mix(in oklab, black 8%, transparent 92%);
+  --color-border: color-mix(in oklab, var(--color-primary) 14%, var(--color-neutral) 86%);
+  --color-surface-elevated: color-mix(in oklab, var(--color-surface) 92%, var(--color-primary) 8%);
+  --color-backplate: color-mix(in oklab, var(--color-primary) 6%, var(--color-surface) 94%);
+  --color-accent-contrast: #071031;
+  --color-secondary-contrast: #071031;
+  --color-primary-contrast: var(--color-on-primary);
+  --focus-ring-color: color-mix(in oklab, var(--color-primary) 70%, var(--color-on-primary) 30%);
+  
+  /* Typography */
+  --font-family-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-family-heading: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: clamp(1.125rem, 2.5vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 3.5vw, 2.25rem);
+  --font-size-xxl: clamp(2.25rem, 5.5vw, 4rem);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-base: 1.3;
+  --line-height-heading: 1.02;
+  --line-height-tight: 1.05;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  
+  /* Shadows */
+  --shadow-level-1: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-level-2: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --shadow-level-3: 0 20px 48px rgba(0, 0, 0, 0.28);
+  --shadow-level-1-colored: 0 6px 18px color-mix(in srgb, var(--color-primary) 14%, rgba(0, 0, 0, 0.18) 86%);
+  --shadow-level-2-colored: 0 16px 40px color-mix(in srgb, var(--color-secondary) 10%, rgba(0, 0, 0, 0.22) 90%);
+  --shadow-level-3-colored: 0 28px 64px color-mix(in srgb, var(--color-accent) 8%, rgba(0, 0, 0, 0.28) 92%);
+  
+  /* Border Radius */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 18px;
+  --border-radius-xl: 28px;
+  --border-radius-full: 9999px;
+  
+  /* Animation */
+  --animation-curve-primary: cubic-bezier(0.16, 1, 0.3, 1);
+  --animation-duration-fast: 100ms;
+  --animation-duration-standard: 160ms;
+  --animation-duration-slow: 220ms;
+  
+  /* Layout */
+  --content-max-width: 84rem;
+  
+  /* Legacy compatibility */
+  --primary-blue: var(--color-primary);
+  --accent-coral: var(--color-accent);
+  --light-bg: var(--color-surface);
+  --off-white: var(--color-surface-elevated);
+  --text-dark: var(--color-on-surface);
+  --text-light: var(--color-on-surface-secondary);
+  --vibrant-yellow: var(--color-accent);
+  --bright-yellow: var(--color-accent);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
+}
+
+@keyframes image-float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes headline-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitle-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes form-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-entrance {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
