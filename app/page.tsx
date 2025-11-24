@@ -1,4 +1,6 @@
 'use client'
+/* eslint-disable react/no-unescaped-entities */
+
 
 import { useState } from 'react'
 import './page.css'
@@ -93,7 +95,7 @@ export default function Home() {
               </div>
               {emailError && <p className="error-message">{emailError}</p>}
               {submitted && !emailError && (
-                <p className="success-message">Thanks! We will notify you soon.</p>
+                <p className="success-message">yes</p>
               )}
             </form>
           </div>
